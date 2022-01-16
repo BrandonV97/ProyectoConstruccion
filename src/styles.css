@@ -625,6 +625,27 @@ button{
     gap: 2rem;
 }
 /* ---------Tables format--------------------- */
+
+.table_date_buttons{
+    display: flex;
+    column-gap: .15rem;
+}
+    
+
+.table_bootons{
+    display: inline-flex;
+    margin: .15rem;
+    background: var(--first-color);
+    padding: .45rem;
+    border-radius: .25rem;
+    color: var(--tittle-color);
+    transition: .3s;
+}
+.table_bootons :hover{
+    background: var(--body-color);
+}
+
+
 .table_container{
     padding: 1rem;
     /* background-color: var(--container-color); */
@@ -657,7 +678,14 @@ tr, td{
     /* border-bottom: 1px solid #ddd; */
 
 }
-tr:hover {background-color: hsl(104,28%,40%);}
+tr:hover {
+    border-bottom: 1px solid #ddd;
+
+    background-color: hsl(104,28%,40%);
+    color: chartreuse;
+}
+
+
 
 /* ------------------news letter  */
 
@@ -766,14 +794,18 @@ column-gap: .75rem;
 
 .footer_social-link{
     display: inline-flex;
+    border: solid 1px white;
+    margin: .2rem;
     background: var(--container-color);
-    padding: .25rem;
+    padding: .40rem;
     border-radius: .25rem;
     color: var(--tittle-color);
+    transition: .5s;
 }
 
 .footer_social-link:hover{
     background: var(--body-color);
+    padding: .45rem;
 }
 
 .footer_title{
