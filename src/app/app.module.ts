@@ -9,6 +9,8 @@ import { SwiperModule } from 'swiper/angular';
 import { PaginasModule } from './paginas/paginas.module';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,17 @@ import { FooterComponent } from './shared/footer/footer.component';
     ProductosComponent,
     MenuComponent,
     FooterComponent
+    
   ],
   imports: [
     SwiperModule,
     BrowserModule,
     AppRoutingModule,
-    PaginasModule
+    PaginasModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

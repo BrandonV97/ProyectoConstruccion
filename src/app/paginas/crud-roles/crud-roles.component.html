@@ -7,22 +7,23 @@
                 <img _ngcontent-xbl-c16="" src="assets/img/footer2-img.png" alt="" class="newslestter_img1">
             </div>
             <div class="">
-                <form action="" class="form_content  grid">
+                <form [formGroup]="form" class="form_content  grid">
                     <div class="lavel_form">Tipo de Rol</div>
-                    <input type="text" placeholder="Ingrese el rol" class="form_input">
+                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtType" >
 
                     <div class="lavel_form">Fecha</div>
-                    <input type="date" class="form_input">
+                    <input type="date"  class="form_input" formControlName="txtDate" >
 
                     <div class="lavel_form">Email</div>
-                    <input type="email" placeholder="Ingrese su correo" class="form_input">
+                    <input type="email" placeholder="Ingrese su correo" class="form_input"  formControlName="txtEmail" >
 
                     <div class="lavel_form">Password</div>
-                    <input type="text" placeholder="Ingrese su Password" class="form_input">
+                    <input type="text" placeholder="Ingrese su Password" class="form_input"
+                    formControlName="txtPassword">
 
 
                     <div></div>
-                    <button class="button_input">Crear</button>
+                    <button class="button_input" (click)="crearRol()">Crear</button>
                 </form>
             </div>
 
@@ -48,66 +49,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>6</td>
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
+                <tr *ngFor="let item of roles">
+                    <td>{{item.rol_id}}</td>
+                    <td>{{item.rol_type}}</td>
+                    <td>{{item.rol_date}}</td>
+                    <td>{{item.rol_email}}</td>
+                    <td>{{item.rol_password}}</td>
+                    <td>{{item.rol_state}}</td>
                     <td class="">
-                        <a href="" target="_blank " class="footer_social-link">
+                        <a  target="_blank " class="footer_social-link">
                             <i class='bx bx-edit'></i>
                         </a>
-                        <a href="" target="_blank " class="footer_social-link">
+                        <a  target="_blank " class="footer_social-link" (click)="eliminarRol(item.rol_id)">
                             <i class='bx bx-trash'></i>
                         </a> 
-                        <a href="" target="_blank " class="footer_social-link">
+                        <a  target="_blank " class="footer_social-link">
                             <i class='bx bx-edit'></i>
                         </a>
 
                     </td>
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td class="">
-                        <a href="" target="_blank " class="footer_social-link">
-                            <i class='bx bx-edit'></i>
-                        </a>
-                        <a href="" target="_blank " class="footer_social-link">
-                            <i class='bx bx-trash'></i>
-                        </a> 
-                        <a href="" target="_blank " class="footer_social-link">
-                            <i class='bx bx-edit'></i>
-                        </a>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>6</td>
-
                 </tr>
             </tbody>
         </table>
