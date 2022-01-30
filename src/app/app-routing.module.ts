@@ -7,6 +7,7 @@ import { CrudRolesComponent } from './paginas/crud-roles/crud-roles.component';
 import { CrudPorductosCategoriaComponent } from './paginas/crud-porductos-categoria/crud-porductos-categoria.component';
 import { CurdoCarritoComponent } from './paginas/curdo-carrito/curdo-carrito.component';
 import { PizzaComponent } from './paginas/pizza/pizza.component';
+import { CrudSeccionComponent } from './paginas/crud-seccion/crud-seccion.component';
 
 const routes:Routes=[
     {
@@ -38,6 +39,10 @@ const routes:Routes=[
       path:'pizza',
       component: PizzaComponent
 
+    },
+    {
+      path: 'seccion',
+      component: CrudSeccionComponent
     },
     {
         path: '**',
