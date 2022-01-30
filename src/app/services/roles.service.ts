@@ -24,7 +24,7 @@ export class RolesService {
   }
 
   public deleteRol(rol_id:any){
-    const url=`http://localhost:3000/rolesd?rol_id=`+rol_id
+    const url=`http://localhost:3000/rolesd/`
     return this.http.put(url,rol_id)
   }
 

@@ -63,9 +63,42 @@
                         <a  target="_blank " class="footer_social-link" (click)="eliminarRol(item.rol_id)">
                             <i class='bx bx-trash'></i>
                         </a> 
-                        <a  target="_blank " class="footer_social-link">
+                        <a  target="_blank " class="footer_social-link" data-toggle="myModal" data-target="#editarRol" (click)="activeModal()"
+                        (click)="infoUpdateRol(item.rol_id, item.rol_email,item.rol_password, item.rol_type, item.rol_date, item.rol_state)">
                             <i class='bx bx-edit'></i>
+                            
                         </a>
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                
+                              <form [formGroup]="form" class="form_content  grid">
+                                <h3 class="modal-title" >Editar Roles</h3>
+                                <div class="modal-title">
+                                   id : {{informacionRoles.rol_id}}
+                                </div>
+                                <div class="lavel_form">Tipo de Rol</div>
+                                <input type="text" value="{{informacionRoles.rol_type}}" class="form_input" formControlName="txtType" >
+
+                                <div class="lavel_form">Fecha</div>
+                                <input type="date"  class="form_input" formControlName="txtDate" value="{{informacionRoles.rol_date}}" >
+            
+                                <div class="lavel_form">Email</div>
+                                <input type="email"  class="form_input"  formControlName="txtEmail" value="{{informacionRoles.rol_email}}" >
+            
+                                <div class="lavel_form">Password</div>
+                                <input type="text" class="form_input" value="{{informacionRoles.rol_password}}"
+                                formControlName="txtPassword">
+            
+                                <button class="button_input button_modal" (click)="inactiveModal()">Cerrar</button>
+                                <button class="button_input button_modal" (click)="actualizarRol(informacionRoles.rol_id)">Actualizar</button>
+                            </form>
+                            </div>
+                          
+                          </div>
+
+                        
 
                     </td>
                 </tr>
@@ -75,3 +108,6 @@
 
 
 </div>
+
+
+
