@@ -794,9 +794,9 @@ column-gap: .75rem;
 
 .footer_social-link{
     display: inline-flex;
-    border: solid 1px white;
+    /* border: solid 1px white; */
     margin: .2rem;
-    background: var(--container-color);
+    background: var(--first-color-alt);
     padding: .40rem;
     border-radius: .25rem;
     color: var(--tittle-color);
@@ -804,8 +804,8 @@ column-gap: .75rem;
 }
 
 .footer_social-link:hover{
-    background: var(--body-color);
-    padding: .45rem;
+    background: var(--container-color);
+    /* padding: .45rem; */
 }
 
 .footer_title{
@@ -885,6 +885,85 @@ column-gap: .75rem;
         justify-content: center;
     }
 }
+
+/* ----------------------------- Modal------------ */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 5%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+  }
+  .modal_show{
+    display: block;
+  }
+  .modal-title{
+    color: var(--tittle-color);
+    padding: 2%;
+    size: 20px;
+  }
+
+  .button_modal{
+    /* border-radius: .75rem; */
+    align-self: left;
+    width: 70%;
+    padding: .5rem;
+   
+  }
+  .button_modal:hover{
+    background-color: rgb(247, 108, 53);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: none;
+    border-color: none;
+    /* margin: auto; */
+   padding-left: 25%;
+   padding-right: 25%;
+   -webkit-animation-name: animatetop;
+   -webkit-animation-duration: 0.4s;
+   animation-name: animatetop;
+   animation-duration: 0.4s
+
+  }
+  /* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+
+
 
 /* for large devices */
 
