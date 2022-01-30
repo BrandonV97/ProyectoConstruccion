@@ -9,7 +9,7 @@ export class RolesService {
   constructor(private http:HttpClient) { }
 
   public getRoles(){
-    const url=`http://localhost:3000/roles`
+    const url=`http://localhost:7000/roles`
     return this.http.get(url)
   }
 
@@ -19,18 +19,18 @@ export class RolesService {
   // }
 
   public createRoles(body:any){
-    const url=`http://localhost:3000/roles`
+    const url=`http://localhost:7000/roles`
     return this.http.post(url,body)
   }
 
-  public deleteRol(rol_id:any){
-    const url=`http://localhost:3000/rolesd/`
-    return this.http.put(url,rol_id)
+  public deleteRol(body:any){
+    const url=`http://localhost:7000/rolesd/`
+    return this.http.put(url,body)
   }
 
 
   public putUpdateRol(body:any){
-    const url=`http://localhost:3000/roles`
+    const url=`http://localhost:7000/roles`
     return this.http.put(url,body)
   }
 

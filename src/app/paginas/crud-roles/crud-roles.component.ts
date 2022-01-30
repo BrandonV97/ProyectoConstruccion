@@ -64,9 +64,11 @@ export class CrudRolesComponent implements OnInit {
 
   public eliminarRol(rol_id: any) {
     console.log(rol_id);
-    this.rolService.deleteRol(rol_id).subscribe(
+    this.rolService.deleteRol({
+      rol_id: rol_id,
+      rol_state:false}).subscribe(
       res => {
-        console.log('Rol Eliminadi');
+        console.log('Rol Eliminad0');
         this.cargarRol()
       }
     )
