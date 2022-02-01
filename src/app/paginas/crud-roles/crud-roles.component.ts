@@ -26,6 +26,7 @@ export class CrudRolesComponent implements OnInit {
   constructor(private rolService: RolesService, private formbuilder: FormBuilder) { }
 
   roles: ModuleRoles[] = [];
+  
   ngOnInit(): void {
     this.cargarRol()
     this.form = this.formbuilder.group({
