@@ -624,6 +624,26 @@ button{
     align-items: center;
     gap: 2rem;
 }
+/* --------------------- DopDow Button------------------- */
+select{
+    background-color: var(--body-color);
+    color: var(--tittle-color);
+    border-radius: 5px;
+    padding: 5%;
+    transition: .5s;
+
+}
+select:hover{
+    background-color: var(--container-color);
+
+}
+option{
+    background-color: hsl(104,28%,40%) ;
+    /* background: rgb(53, 87, 53); */
+    color: var(--tittle-color);
+    border-radius: 3rem;
+
+}
 /* ---------Tables format--------------------- */
 
 .table_date_buttons{

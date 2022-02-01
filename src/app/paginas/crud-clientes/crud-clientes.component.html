@@ -1,16 +1,121 @@
 <div class="container">
+    <p>crud-clientes works!</p>
 
-    <p >crud-clientes works!</p>
-<div class="home_data">
-    <h3 class="home_subtitle">#1 first Scared Ghost</h3>
-    <h1 class="home_title">UOOOO <br> TRICK OR <br> TREAT!!</h1>
-    <p class="home_description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-        consectetur eius
-        doloremque suscipit, facilis blanditiis possimus cupiditate deserunt
-        est, expedita
-        temporibus fugit sunt quaerat quidem optio? Quam enim laborum
-        repellendus?
-    </p>
-</div>
+    <section class="section_newsletter">
+        <div class="form_container_img grid">
+            <div class="">
+                <img _ngcontent-xbl-c16="" src="assets/img/footer2-img.png" alt="" class="newslestter_img1">
+            </div>
+            <div class="">
+                <form [formGroup]="form" class="form_content  grid">
+                    <div class="lavel_form">Tipo de Rol</div>
+                    
+                    <select name="form-select"  id="inputGroupSelect01" formControlName="rolSelected" required="true">
+                        <option *ngFor="let i of roles" value="{{i.rol_type}}" [value]="i.rol_id">{{i.rol_type}}</option>
+                    </select>
+
+                    <!-- <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtRol_id"> -->
+
+                    <div class="lavel_form">Nombres</div>
+                    <input type="text" placeholder="Nombres" class="form_input" formControlName="txtNames">
+
+                    <div class="lavel_form">Teléfono</div>
+                    <input type="text" placeholder="Ingrese su Telefono" class="form_input" formControlName="txtPhone">
+
+                    <div class="lavel_form">Dirección</div>
+                    <input type="text" placeholder="Dirección" class="form_input" formControlName="txtAddres">
+
+
+                    <div></div>
+                    <button class="button_input" (click)="crearUser()">Crear</button>
+                </form>
+            </div>
+
+            <div class="">
+                <img _ngcontent-xbl-c16="" src="assets/img/footer1-img.png" alt="" class="newslestter_img2">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="table_container container grid">
+        <table class="table_content">
+            <thead class="table_head">
+                <tr>
+                    <th>Id Usuario</th>
+                    <th>Tipo de Rol</th>
+                    <th>Nombres</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of users">
+                    <td>{{item.user_id}}</td>
+                    <td>{{item.rol_id}}</td>
+                    <td>{{item.user_names}}</td>
+                    <td>{{item.user_addres}}</td>
+                    <td>{{item.user_phone}}</td>
+                    <td>{{item.user_state}}</td>
+                    <td class="">
+
+                        <a target="_blank " class="footer_social-link" (click)="eliminarUser(item.user_id)">
+                            <i class='bx bx-trash'></i>
+                        </a>
+                        <a target="_blank " class="footer_social-link" data-toggle="myModal" data-target="#editarRol"
+                            (click)="activeModal()"
+                            (click)="infoUpdateUser(item.user_id, item.rol_id, item.user_names,item.user_addres, item.user_phone, item.user_state)">
+                            <i class='bx bx-edit'></i>
+
+                        </a>
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+
+                                <form [formGroup]="form" class="form_content  grid">
+                                    <h3 class="modal-title">Editar Roles</h3>
+                                    <div class="modal-title">
+                                        id : {{informacionUsers.user_id}}
+                                    </div>
+                                    <div class="lavel_form">Tipo de Rol</div>
+                                    <input type="text" value="{{informacionUsers.rol_id}}" class="form_input"
+                                        formControlName="txtRol_id">
+
+                                    <div class="lavel_form">Nombres</div>
+                                    <input type="text" class="form_input" formControlName="txtNames"
+                                        value="{{informacionUsers.user_names}}">
+
+                                    <div class="lavel_form">Dirección</div>
+                                    <input type="text" class="form_input" formControlName="txtAddres"
+                                        value="{{informacionUsers.user_addres}}">
+
+                                    <div class="lavel_form">Telefono</div>
+                                    <input type="text" class="form_input" value="{{informacionUsers.user_phone}}"
+                                        formControlName="txtPhone">
+
+                                    <button class="button_input button_modal" (click)="inactiveModal()">Cerrar</button>
+                                    <button class="button_input button_modal"
+                                        (click)="actualizarUser(informacionUsers.rol_id)">Actualizar</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+
+
+
+
 </div>
