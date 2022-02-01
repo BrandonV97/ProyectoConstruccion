@@ -1,3 +1,124 @@
 <div class="container">
     <p>crud-productos works!</p>
+
+
+    <section class="section_newsletter">
+        <div class="form_container_img grid">
+            <div class="">
+                <img _ngcontent-xbl-c16="" src="assets/img/footer2-img.png" alt="" class="newslestter_img1">
+            </div>
+            <div class="">
+                <form [formGroup]="form" class="form_content  grid">
+
+                    <div class="lavel_form">Titulo</div>
+                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtTitle" >
+
+                    <div class="lavel_form">Descripcion</div>
+                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtDescription" >
+
+                    <div class="lavel_form">Costo</div>
+                    <input type="number" placeholder="Ingrese el rol" class="form_input" formControlName="txtCost" >
+
+                    <div class="lavel_form">Precio</div>
+                    <input type="number" placeholder="Ingrese el rol" class="form_input" formControlName="txtPrice" >
+
+                    <div class="lavel_form">Stock</div>
+                    <input type="number" placeholder="Ingrese el rol" class="form_input" formControlName="txtStock" >
+
+                    <div class="lavel_form">Tipo</div>
+                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtType" >
+
+                    <div class="lavel_form">Imagen</div>
+                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtImage" >
+
+                    <div></div>
+                    <button class="button_input" (click)="crearProducto()">Crear</button>
+                </form>
+            </div>
+
+            <div class="">
+                <img _ngcontent-xbl-c16="" src="assets/img/footer1-img.png" alt="" class="newslestter_img2">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="table_container container grid">
+        <table class="table_content">
+            <thead class="table_head">
+                <tr>
+                    <th>Id Producto</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Costo</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Tipo</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of productos">
+                    <td>{{item.product_id}}</td>
+                    <td>{{item.product_title}}</td>
+                    <td>{{item.product_description}}</td>
+                    <td>{{item.product_cost}}</td>
+                    <td>{{item.product_price}}</td>
+                    <td>{{item.product_stock}}</td>
+                    <td>{{item.product_type}}</td>
+                    <td>{{item.product_image}}</td>
+                    <td class="">
+                        <a  target="_blank " class="footer_social-link" (click)="eliminarProducto(item.product_id)">
+                            <i class='bx bx-trash'></i>
+                        </a> 
+                        <a  target="_blank " class="footer_social-link" data-toggle="myModal" data-target="#editarProducto" (click)="activeModal()"
+                        (click)="infoUpdateProducto(item.product_id, item.product_title,item.product_description, item.product_cost,item.product_price, item.product_stock, item.product_type, item.product_image)">
+                            <i class='bx bx-edit'></i>
+                        
+                        </a>
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                
+                              <form [formGroup]="form" class="form_content  grid">
+                                <h3 class="modal-title" >Editar Producto</h3>
+
+                                <div class="modal-title">
+                                   Id Producto : {{informacionProductos.product_id}}
+                                </div>
+
+                                <div class="lavel_form">Titulo</div>
+                                <input type="text" value="{{informacionProductos.product_title}}" class="form_input" formControlName="txtTitle" >
+
+                                <div class="lavel_form">Descripción</div>
+                                <input type="text" value="{{informacionProductos.product_description}}" class="form_input" formControlName="txtDescription" >
+
+                                <div class="lavel_form">Costo</div>
+                                <input type="numeric" value="{{informacionProductos.product_cost}}" class="form_input" formControlName="txtCost" >
+
+                                <div class="lavel_form">Precio</div>
+                                <input type="numeric" value="{{informacionProductos.product_price}}" class="form_input" formControlName="txtPrice" >
+
+                                <div class="lavel_form">Stock</div>
+                                <input type="numeric" value="{{informacionProductos.product_stock}}" class="form_input" formControlName="txtStock" >
+
+                                <div class="lavel_form">Tipo</div>
+                                <input type="text" value="{{informacionProductos.product_type}}" class="form_input" formControlName="txtType" >
+
+                                <div class="lavel_form">Image</div>
+                                <input type="text" value="{{informacionProductos.product_image}}" class="form_input" formControlName="txtImage" >
+            
+                                <button class="button_input button_modal" (click)="inactiveModal()">Cerrar</button>
+                                <button class="button_input button_modal" (click)="actualizarProducto(informacionProductos.product_id)">Actualizar</button>
+                            </form>
+                            </div>
+                          </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </div>

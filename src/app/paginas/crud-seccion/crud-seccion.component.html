@@ -1,1 +1,75 @@
-<p>crud-seccion works!</p>
+<div class="container">
+    <p>crud-seccion works!</p>
+    
+    <section class="section_newsletter">
+        <div class="form_container_img grid">
+            <div class="">
+                <img _ngcontent-xbl-c16="" src="assets/img/footer2-img.png" alt="" class="newslestter_img1">
+            </div>
+            <div class="">
+                <form [formGroup]="form" class="form_content  grid">
+
+                    <div class="lavel_form">Nombre: </div>
+                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtName" >
+
+                    <div></div>
+                    <button class="button_input" (click)="crearSeccion()">Crear</button>
+                </form>
+            </div>
+
+            <div class="">
+                <img _ngcontent-xbl-c16="" src="assets/img/footer1-img.png" alt="" class="newslestter_img2">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="table_container container grid">
+        <table class="table_content">
+            <thead class="table_head">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of secciones">
+                    <td>{{s.sec_id}}</td>
+                    <td>{{s.sec_name}}</td>
+                    <td class="">
+                        <a  target="_blank " class="footer_social-link" (click)="eliminarSeccion(s.sec_id)">
+                            <i class='bx bx-trash'></i>
+                        </a> 
+                        <a  target="_blank " class="footer_social-link" data-toggle="myModal" data-target="#editarSeccion" (click)="activeModal()"
+                        (click)="infoUpdateSeccion(s.sec_id, s.sec_name)">
+                            <i class='bx bx-edit'></i>
+                        
+                        </a>
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                
+                              <form [formGroup]="form" class="form_content  grid">
+                                <h3 class="modal-title" >Editar Seccion</h3>
+
+                                <div class="modal-title">
+                                   Id Sección : {{informacionSecciones.sec_id}}
+                                </div>
+
+                                <div class="lavel_form">Nombre</div>
+                                <input type="text" value="{{informacionSecciones.sec_name}}" class="form_input" formControlName="txtName" >
+
+                                <button class="button_input button_modal" (click)="inactiveModal()">Cerrar</button>
+                                <button class="button_input button_modal" (click)="actualizarSeccion(informacionSecciones.sec_id)">Actualizar</button>
+                            </form>
+                            </div>
+                          </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
