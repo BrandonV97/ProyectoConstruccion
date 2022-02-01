@@ -60,7 +60,6 @@ export class CrudProductosComponent implements OnInit {
       },
     });
   }
-
   public cargarProducto() {
     this.productoService.getProductos().subscribe(
       (producto: any) => {
