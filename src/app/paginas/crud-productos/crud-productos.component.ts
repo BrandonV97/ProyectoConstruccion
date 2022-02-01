@@ -36,9 +36,9 @@ export class CrudProductosComponent implements OnInit {
     this.form = this.formbuilder.group({
       txtTitle: [''],
       txtDescription: [''],
-      txtCost: [''],
-      txtPrice: [''],
-      txtStock: [''],
+      txtCost: [0],
+      txtPrice: [0],
+      txtStock: [0],
       txtType: [''],
       txtImage: ['']
     });
@@ -102,22 +102,19 @@ export class CrudProductosComponent implements OnInit {
   }
 
   public actualizarProducto(product_id: any) {
-    this.productoService
-      .updateProducto({
-        product_id: product_id,
-        product_title: this.form.value.txtTitle,
-        product_description: this.form.value.txtDescription,
-        product_cost: this.form.value.txtCost,
-        product_price: this.form.value.txtPrice,
-        product_stock: this.form.value.txtStock,
-        product_type: this.form.value.txtType,
-        product_image: this.form.value.txtImage,
-        product_state: true,
-      })
-      .subscribe((res) => {
-        console.log('Producto actualizado');
-        this.cargarProducto();
-      });
+    this.productoService.updateProducto({
+      product_id: product_id,
+      product_title: this.form.value.txtTitle,
+      product_description: this.form.value.txtDescription,
+      product_cost: this.form.value.txtCost,
+      product_price: this.form.value.txtPrice,
+      product_stock: this.form.value.txtStock,
+      product_type: this.form.value.txtType,
+      product_image: this.form.value.txtImage
+    }).subscribe(res => {
+      console.log('Producto actualizado');
+      this.cargarProducto()
+    })
   }
 
   public infoUpdateProducto(
