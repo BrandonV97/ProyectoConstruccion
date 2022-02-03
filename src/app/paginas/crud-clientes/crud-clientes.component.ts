@@ -59,6 +59,15 @@ export class CrudClientesComponent implements OnInit {
       }, (error) => console.log(error)
     )
   }
+  public getNameRol(id:any){
+    let nombre = this.roles.find(item=>{
+      return item.rol_id== id
+    })
+//  console.log(nombre?.rol_type);
+ 
+    
+    return nombre?.rol_type
+  }
 
   public crearUser() {
     this.userService.CreateUsers({

@@ -55,7 +55,7 @@
             <tbody>
                 <tr *ngFor="let item of users">
                     <td>{{item.user_id}}</td>
-                    <td>{{item.rol_id}}</td>
+                    <td>{{getNameRol(item.rol_id)}}</td>
                     <td>{{item.user_names}}</td>
                     <td>{{item.user_addres}}</td>
                     <td>{{item.user_phone}}</td>

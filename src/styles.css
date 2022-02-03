@@ -626,7 +626,7 @@ button{
 }
 /* --------------------- DopDow Button------------------- */
 select{
-    background-color: var(--body-color);
+    background-color: var(--container-color);
     color: var(--tittle-color);
     border-radius: 5px;
     padding: 5%;
@@ -634,7 +634,10 @@ select{
 
 }
 select:hover{
-    background-color: var(--container-color);
+    /* background-color: var(--container-color); */
+    background: var(--body-color);
+
+
 
 }
 option{
