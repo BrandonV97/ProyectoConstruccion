@@ -40,23 +40,18 @@
                 <section class="swiper-slide">
                     <div class="home_content grid">
                         <div class="home_group">
-                            <img src="assets/img/home2-img.png" alt="" class="home_img">
+                            <img src="assets/img/amor.png" alt="" class="home_img">
                             <div class="home_indicator"></div>
                             <div class="home_details-img">
-                                <h4 class="home_details-title">The second product</h4>
-                                <span class="home_details-subtitle">no words can descript them</span>
+                                <h4 class="home_details-title"></h4>
+                                <span class="home_details-subtitle"></span>
                             </div>
                         </div>
                         <div class="home_data">
-                            <h3 class="home_subtitle">#2 best Duos scared Ghost</h3>
-                            <h1 class="home_title">Bring back <br> TRICK OR <br> TREAT!!</h1>
+                            <h3 class="home_subtitle">#2 Descuentos por fechas especiales</h3>
+                            <h1 class="home_title">POR EL DÍA <br> DEL AMOR<br> Y LA AMISTAD!!</h1>
                             <p class="home_description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                                consectetur eius
-                                doloremque suscipit, facilis blanditiis possimus cupiditate deserunt
-                                est, expedita
-                                temporibus fugit sunt quaerat quidem optio? Quam enim laborum
-                                repellendus?
+                                Re
                             </p>
                         </div>
                         <div class="home_buttons">
@@ -68,6 +63,8 @@
                         </div>
                     </div>
                 </section>
+
+
 
                 <section class="swiper-slide">
                     <div class="home_content grid">
@@ -100,128 +97,32 @@
                         </div>
                     </div>
                 </section>
+
+
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <section class="section category">
-        <h2 class="section_title">Favorite scare <br>Category</h2>
-        <div class="category_container container grid">
-            <div class="category_data">
-                <img src="assets/img/category1-img.png" alt="" class="category_img">
-                <h3 class="category_title">Ghost</h3>
-                <p class="category_description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            </div>
-
-            <div class="category_data">
-                <img src="assets/img/category2-img.png" alt="" class="category_img">
-                <h3 class="category_title">PumpKins</h3>
-                <p class="category_description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            </div>
-
-            <div class="category_data">
-                <img src="assets/img/category3-img.png" alt="" class="category_img">
-                <h3 class="category_title">whitch hat</h3>
-                <p class="category_description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            </div>
-        </div>
 
 
 
-    </section>
-
-
-    <section class="section about" id="about">
-        <div class="about_container container grid">
-            <div class="about_data">
-                <h2 class="section_title">About Hallowen <br> spectre</h2>
-                <p class="about_description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ea eaque minima accusamus repellat
-                    dignissimos ullam provident numquam maiores voluptate repudiandae sunt laborum, facere autem.
-                    Maiores, odit. Cum, aperiam dolor!
-                </p>
-                <a href="#" class="button">know more</a>
-
-            </div>
-            <img src="assets/img/about-img.png" alt="" class="about_img">
-        </div>
-    </section>
 
     <section class="section trick" id="trick">
         <h2 class="section_title">Todos nuestros productos</h2>
         <div class="trick_container container grid">
-            <div class="trick_content">
-                <img src="assets/img/trick-treat1-img.png" alt="" class="trick_img">
-                <h3 class="trick_tittle">Troffe</h3>
+            <div class="trick_content"  *ngFor="let product of productos">
+                <img [src]="product.product_image" alt="" class="trick_img" width="100" height="100">
+                <h3 class="trick_tittle">{{product.product_title}}</h3>
 
-                <span class="trick_subtitle">Candy</span>
-                <span class="trick_price">$14.99</span>
+                <span class="trick_subtitle">{{product.product_description}}</span>
+                <span class="trick_price">${{product.product_price}}</span>
 
                 <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'></i>
+                    <i class='bx bxs-cart-add trick_icon'>Buy</i>
                 </button>
             </div>
 
-            <div class="trick_content">
-                <img src="assets/img/trick-treat2-img.png" alt="" class="trick_img">
-                <h3 class="trick_tittle">Bone</h3>
-
-                <span class="trick_subtitle">Accessory</span>
-                <span class="trick_price">$11.99</span>
-
-                <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'></i>
-                </button>
-            </div>
-
-            <div class="trick_content">
-                <img src="assets/img/trick-treat3-img.png" alt="" class="trick_img">
-                <h3 class="trick_tittle">ScareCrow</h3>
-
-                <span class="trick_subtitle">Accessory</span>
-                <span class="trick_price">$11.99</span>
-
-                <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'></i>
-                </button>
-            </div>
-
-            <div class="trick_content">
-                <img src="assets/img/trick-treat4-img.png" alt="" class="trick_img">
-                <h3 class="trick_tittle">Candy Cane</h3>
-
-                <span class="trick_subtitle">Candy</span>
-                <span class="trick_price">$7.99</span>
-
-                <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'></i>
-                </button>
-            </div>
-
-            <div class="trick_content">
-                <img src="assets/img/trick-treat5-img.png" alt="" class="trick_img">
-                <h3 class="trick_tittle">PumpKin</h3>
-
-                <span class="trick_subtitle">Accessory</span>
-                <span class="trick_price">$19.90</span>
-
-                <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'></i>
-                </button>
-            </div>
-
-            <div class="trick_content">
-                <img src="assets/img/trick-treat6-img.png" alt="" class="trick_img">
-                <h3 class="trick_tittle">Ghost</h3>
-
-                <span class="trick_subtitle">Accessory</span>
-                <span class="trick_price">$7.99</span>
-
-                <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'></i>
-                </button>
-            </div>
         </div>
     </section>
 
@@ -237,21 +138,23 @@
 
     <section class="section new" id="new">
         <h2 class="section_title">Nueva Mercadería</h2>
-        <div class="new_container container ">
+
+
+        <div class="new_container container " >
             <div class="swiper new-swiper">
                 <div class="swiper-wrapper">
-                    <div class="new_content swiper-slide">
+
+                    <div class="new_content swiper-slide" *ngFor="let product of productos" width="100" height="100">
                         <div class="new_tag">New</div>
-                        <img src="assets/img/new1-img.png" alt="" class="new_img">
-                        <h3 class="new_title">Haunter House</h3>
-                        <span class="new_subtitle">Accessory</span>
+                        <img [src]="product.product_image" alt="" class="new_img">
+                        <h3 class="new_title">{{product.product_title}}</h3>
+                        <span class="new_subtitle">{{product.product_description}}</span>
                         <div class="new_prices">
-                            <span class="new_price">$19.99</span>
-                            <span class="new_discount">$20.99</span>
+                            <span class="new_price">${{product.product_price}}</span>
+                            <span class="new_discount">${{product.product_price}}</span>
                         </div>
                         <button class="button new_button">
                             <i class='bx bxs-cart-add trick_icon'></i>
-
                         </button>
                     </div>
 
@@ -266,7 +169,6 @@
                         </div>
                         <button class="button new_button">
                             <i class='bx bxs-cart-add trick_icon'></i>
-
                         </button>
                     </div>
 
