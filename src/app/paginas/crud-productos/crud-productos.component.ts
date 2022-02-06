@@ -71,8 +71,7 @@ export class CrudProductosComponent implements OnInit {
   }
 
   public crearProducto() {
-    this.productoService
-      .createProductos({
+    this.productoService.createProductos({
         product_title: this.form.value.txtTitle,
         product_description: this.form.value.txtDescription,
         product_cost: this.form.value.txtCost,
