@@ -118,8 +118,8 @@
                 <span class="trick_subtitle">{{product.product_description}}</span>
                 <span class="trick_price">${{product.product_price}}</span>
 
-                <button class="button trick_button">
-                    <i class='bx bxs-cart-add trick_icon'>Buy</i>
+                <button class="button trick_button" routerLink="carrito">
+                    <i class='bx bxs-cart-add trick_icon'></i>
                 </button>
             </div>
 
@@ -153,7 +153,7 @@
                             <span class="new_price">${{product.product_price}}</span>
                             <span class="new_discount">${{product.product_price}}</span>
                         </div>
-                        <button class="button new_button">
+                        <button class="button new_button" routerLink="carrito">
                             <i class='bx bxs-cart-add trick_icon'></i>
                         </button>
                     </div>

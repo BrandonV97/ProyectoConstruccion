@@ -1,0 +1,38 @@
+<div class="container">
+    <section class="table_container container grid">
+        <table class="table_content">
+            <thead class="table_head">
+                <tr>
+                    <th>ID</th>
+
+                    <th>Usuario</th>
+                    <th>Fecha</th>
+                    <th>Iva</th>
+                    <th>Subtotal</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartCabs">
+                    <td>{{item.cart_cab_id}}</td>                    
+                    <td>{{item.user_id}}</td>
+                    <td>{{item.cart_cab_date | date:'dd/mm/yyyy' }}</td>
+                    <td>{{item.cart_cab_iva}}</td>
+                    <td>{{item.cart_cab_subtotal}}</td>
+                    <td>{{item.cart_cab_total}}</td>
+                    <td>
+                        <a class="footer_social-link"
+                            [routerLink]="['/detalle',item.cart_cab_id,item.cart_cab_date,item.cart_cab_total]">
+                            ver
+                        </a>
+
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </section>
+</div>

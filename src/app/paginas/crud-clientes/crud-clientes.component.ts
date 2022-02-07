@@ -63,9 +63,6 @@ export class CrudClientesComponent implements OnInit {
     let nombre = this.roles.find(item=>{
       return item.rol_id== id
     })
-//  console.log(nombre?.rol_type);
- 
-    
     return nombre?.rol_type
   }
 

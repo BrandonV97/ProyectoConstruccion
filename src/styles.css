@@ -618,12 +618,44 @@ button{
     padding: 1rem ;
     border-radius: .75rem;
 }
+.carrito{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    /* align-items: left; */
+    row-gap: 1rem;
+    background: var(--container-color);
+    padding: 1rem ;
+    border: solid 1px;
+    border-radius: .75rem;
+}
+.carrito2{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 2rem;
+    /* align-items: left; */
+    row-gap: 1rem;
+    background: var(--container-color);
+    padding: 1rem ;
+    border: solid 1px;
+    border-radius: .75rem;
+}
+.carrito_btn{
+    /* display: inline-block; */
+    background-color: var(--first-color);
+    color: var(--tittle-color);
+    padding: .5rem 0rem;
+    border-radius: .5rem;
+    font-weight: var(--small-font-size);
+    transition: .3s;
+}
 
 .form_container_img{
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2rem;
 }
+
 /* --------------------- DopDow Button------------------- */
 select{
     background-color: var(--container-color);

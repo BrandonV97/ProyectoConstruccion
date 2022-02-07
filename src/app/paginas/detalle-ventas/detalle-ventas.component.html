@@ -1,0 +1,48 @@
+<div class="container">
+    <section class="">
+
+
+        <form [formGroup]="form" class="carrito " style="margin: 2px 5rem;">
+            <div class="lavel_form">Id de Venta</div>
+            <div class="lavel_form">{{idCartCab}}</div>
+           
+            <div class="lavel_form">Fecha de Creacion:</div>
+            <div class="lavel_form">{{fecha  | date:'dd/mm/yyyy'}}</div>
+
+            <div class="lavel_form">Su total a pagar:</div>
+            <div class="lavel_form">{{TotalPagar}}</div>
+        </form>
+
+
+    </section>
+
+    <section class="table_container container grid">
+        <table class="table_content">
+            <thead class="table_head">
+                <tr>
+
+                    <th>Producto</th>
+                    <th>Imagen</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listCartDet">
+                    <td>{{getNameProduct(item.product_id)}}</td>
+                    <td><img style="height: 40px; width: 40px;" src="{{getImageProduct(item.product_id)}}" alt=""></td>
+                    <td>{{item.cart_det_amount}}</td>
+                    <td>{{item.cart_det_price}}</td>
+                    <td>{{item.cart_det_subtotal}}</td>
+                   
+                </tr>
+            </tbody>
+
+        </table>
+        
+    </section>
+
+
+</div>

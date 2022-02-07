@@ -1,8 +1,9 @@
 export interface ModuleCartDet {
-    cart_cab_id?:   number;
-    cart_det_id:   number;
-    product_id:    number;
-    cart_amount:   number;
-    cart_price:    string;
-    cart_subtotal: string;
+    cart_det_id?:       number;
+
+    cart_cab_id?:       number;
+    product_id:        number;
+    cart_det_amount:   number;
+    cart_det_price:    number;
+    cart_det_subtotal: number;
 }

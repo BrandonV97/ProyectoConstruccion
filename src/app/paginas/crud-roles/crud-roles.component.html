@@ -1,5 +1,4 @@
 <div class="container">
-    <p>crud-roles works!</p>
 
     <section class="section_newsletter">
         <div class="form_container_img grid">
@@ -52,7 +51,7 @@
                 <tr *ngFor="let item of roles">
                     <td>{{item.rol_id}}</td>
                     <td>{{item.rol_type}}</td>
-                    <td>{{item.rol_date}}</td>
+                    <td>{{item.rol_date  | date:'dd/mm/yyyy'}}</td>
                     <td>{{item.rol_email}}</td>
                     <td>{{item.rol_password}}</td>
                     <td>{{item.rol_state}}</td>

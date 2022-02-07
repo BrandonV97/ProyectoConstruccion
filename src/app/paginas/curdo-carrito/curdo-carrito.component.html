@@ -1,7 +1,86 @@
-<div class="container grid">
-    <p>curdo-carrito works!</p>
+<div class="container ">
+    <p>Datos de Carrito</p>
+    <section class="">
 
-    
+
+        <form [formGroup]="form" class="carrito " style="margin: 2px 5rem;">
+            <div class="lavel_form">Seleccione Usuario</div>
+
+            <select name="form-select" id="inputGroupSelect01" formControlName="usuarioSelected" required="true">
+                <option *ngFor="let i of usuarios" [value]="i.user_id">{{i.user_names}}</option>
+            </select>
+            <div class="lavel_form">Fecha de Creacion:</div>
+            <input type="date" class="form_input" formControlName="txtFecha">
+
+        </form>
+
+        <form [formGroup]="form" class="carrito2">
+            <div class="lavel_form">Product:o</div>
+
+            <select name="form-select" id="inputGroupSelect01" formControlName="productoSelected" required="true">
+                <option *ngFor="let i of productos" [value]="i.product_id" (click)="getPrecioProd(i.product_price)">
+                    {{i.product_title}}
+                </option>
+            </select>
+
+            <!-- <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtRol_id"> -->
+
+            <div class="lavel_form">Cantidad</div>
+            <input type="number" class="form_input" formControlName="txtCantidad" min="1">
+            
+            
+            <button class="carrito_btn" (click)="asignarProductos()">Agreagar Productos</button>
+
+        </form>
+
+
+    </section>
+
+    <section class="table_container container grid">
+        <table class="table_content">
+            <thead class="table_head">
+                <tr>
+
+                    <th>Producto</th>
+                    <th>Imagen</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listCartDet">
+                    <td>{{getNameProduct(item.product_id)}}</td>
+                    <td><img style="height: 40px; width: 40px;" src="{{getImageProduct(item.product_id)}}" alt=""></td>
+                    <td>{{item.cart_det_amount}}</td>
+                    <td>{{item.cart_det_price}}</td>
+                    <td>{{item.cart_det_subtotal}}</td>
+                    <td class="">
+
+                        <a target="_blank " class="footer_social-link">
+                            <i class='bx bx-trash' (click)="deleteProduct(item)"></i>
+                        </a>
+
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div style="padding-left: 81%;">
+            <div style="border: solid 3px; width: 11rem; border-radius: .75rem;">
+                Subtotal : {{calculoSubtotal | number:'2.2-2'}}
+                <br>
+                Iva : {{calculoIva | number:'2.2-2'}}
+                <br>
+                Total : {{calculoTotal | number:'2.2-2'}}
+            </div>
+        </div>
+        <button class="button_input" style="margin: 1% 35%;" (click)="GuardarCarrito()">Generar Compra</button>
+    </section>
+
+
 
 
 

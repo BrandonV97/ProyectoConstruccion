@@ -1,7 +1,4 @@
 <div class="container">
-    <p>crud-productos works!</p>
-
-
     <section class="section_newsletter">
         <div class="form_container_img grid">
             <div class="">
@@ -11,10 +8,10 @@
                 <form [formGroup]="form" class="form_content  grid">
 
                     <div class="lavel_form">Titulo</div>
-                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtTitle" >
+                    <input type="text" placeholder="Ingrese el Titulo" class="form_input" formControlName="txtTitle" >
 
                     <div class="lavel_form">Descripcion</div>
-                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtDescription" >
+                    <input type="text" placeholder="Descripcion" class="form_input" formControlName="txtDescription" >
 
                     <div class="lavel_form">Costo</div>
                     <input type="number" placeholder="Ingrese el rol" class="form_input" formControlName="txtCost" >
@@ -26,10 +23,10 @@
                     <input type="number" placeholder="Ingrese el rol" class="form_input" formControlName="txtStock" >
 
                     <div class="lavel_form">Tipo</div>
-                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtType" >
+                    <input type="text" placeholder="Tipo de Producto" class="form_input" formControlName="txtType" >
 
                     <div class="lavel_form">Imagen</div>
-                    <input type="text" placeholder="Ingrese el rol" class="form_input" formControlName="txtImage" >
+                    <input type="text" placeholder="url" class="form_input" formControlName="txtImage" >
 
                     <div></div>
                     <button class="button_input" (click)="crearProducto()">Crear</button>
@@ -68,7 +65,7 @@
                     <td>{{item.product_price}}</td>
                     <td>{{item.product_stock}}</td>
                     <td>{{item.product_type}}</td>
-                    <td>{{item.product_image}}</td>
+                    <td><img style="height: 40px; width: 40px;" src="{{item.product_image}}" alt=""></td>
                     <td class="">
                         <a  target="_blank " class="footer_social-link" (click)="eliminarProducto(item.product_id)">
                             <i class='bx bx-trash'></i>

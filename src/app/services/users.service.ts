@@ -14,6 +14,11 @@ export class UserService {
     // const url=`http://localhost:4000/pizzas`
     return this.http.get(this.url)
   }
+
+  public getUsersbyID(id:any){
+    // const url=`http://localhost:4000/pizzas`
+    return this.http.get(this.url+id)
+  }
   public CreateUsers(body:any){
     // const url=`http://localhost:4000/pizzas`
     return this.http.post(this.url,body)

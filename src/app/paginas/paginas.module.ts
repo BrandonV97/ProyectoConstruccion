@@ -8,6 +8,9 @@ import { CrudPorductosCategoriaComponent } from './crud-porductos-categoria/crud
 import { PizzaComponent } from './pizza/pizza.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrudSeccionComponent } from './crud-seccion/crud-seccion.component';
+import { ListaCarritoComponent } from './lista-carrito/lista-carrito.component';
+import { DetalleVentasComponent } from './detalle-ventas/detalle-ventas.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import { CrudSeccionComponent } from './crud-seccion/crud-seccion.component';
     CrudRolesComponent,
     CrudPorductosCategoriaComponent,
     PizzaComponent,
-    CrudSeccionComponent
+    CrudSeccionComponent,
+    ListaCarritoComponent,
+    DetalleVentasComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   exports:[
     CrudProductosComponent,

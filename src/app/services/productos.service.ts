@@ -13,10 +13,6 @@ export class ProductosService {
     return this.http.get(url)
   }
 
-  // public deletePizza(piz_id:any){
-  //   const url=`http://localhost:4000/pizzas?piz_id=`+piz_id
-  //   return this.http.delete(url)
-  // }
 
   public createProductos(body:any){
     const url=`http://localhost:7000/products`

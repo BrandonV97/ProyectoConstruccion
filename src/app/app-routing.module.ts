@@ -8,6 +8,8 @@ import { CrudPorductosCategoriaComponent } from './paginas/crud-porductos-catego
 import { CurdoCarritoComponent } from './paginas/curdo-carrito/curdo-carrito.component';
 import { PizzaComponent } from './paginas/pizza/pizza.component';
 import { CrudSeccionComponent } from './paginas/crud-seccion/crud-seccion.component';
+import { ListaCarritoComponent } from './paginas/lista-carrito/lista-carrito.component';
+import { DetalleVentasComponent } from './paginas/detalle-ventas/detalle-ventas.component';
 
 const routes:Routes=[
     {
@@ -43,6 +45,13 @@ const routes:Routes=[
     {
       path: 'seccion',
       component: CrudSeccionComponent
+    },
+    {
+      path: 'ventas',
+      component: ListaCarritoComponent
+    },{
+      path:'detalle/:cart_cab_id/:cart_cab_date/:cart_cab_total',
+      component:DetalleVentasComponent
     },
     {
         path: '**',

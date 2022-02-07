@@ -10,14 +10,15 @@ export class CartDetService {
 
   //agregar metodos
   public getFactDet(id:any){
-    const url=`http://localhost:7000/cartDet`+id
+    const url=`http://localhost:7000/cartDet?cart_cab_id=1`+id
     return this.http.get(url)
   }
   
   public CreateCartDet(body:any){
-    const url=`http://localhost:4000/cartDet`
+    const url=`http://localhost:7000/cartDet`
     return this.http.post(url,body)
   }
+  
 
 
 }
